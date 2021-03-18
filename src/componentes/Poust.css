@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@700&display=swap');
+
+.poust_container {
+    height: 500px;
+    width: 100%;   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items:center;
+    justify-items: center;
+    border-radius: 30px;
+    border: medium solid #ddd;
+    font-family: sans-serif;
+    max-width: 100%;
+    
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.poust_container .items img {
+    max-width: 100%;
+}

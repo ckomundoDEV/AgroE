@@ -1,0 +1,58 @@
+.poust-container {
+    background-color: #181818;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px ;
+    padding: 20px;
+}
+
+
+.main {
+    height: 80vh;
+    background-image: linear-gradient(rgba( 16, 16, 16, .8), rgba( 16, 16, 16, .8) ), url(../documentos/wall.jpg);
+    background-size: cover;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    
+
+}
+
+.main .info-content {
+    grid-column: 5/10;
+    grid-row: 3/7;
+    color: beige;
+    font-family: 'Roboto', sans-serif;
+    text-align: start;
+}
+
+.main h2 {
+    font-size: 7em;
+    color: #7DE129;
+    
+}
+
+.main h3 {
+    font-size: 50px;
+    color: #D6DD04;
+}
+
+.main p {
+    margin-top: 100px;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    .poust-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main .info-content {
+        grid-column: 2/10;
+        grid-row: 2 / 6;
+
+    }
+}

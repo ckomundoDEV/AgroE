@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@700&display=swap');
+
+.articulos {
+    display: grid; 
+    height: 100%;
+    grid-template-rows: repeat(1 ,1fr);
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.articulo_header {
+    background-color: #EEEEEE;
+    height: 10vh;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.select {
+    width: 200px;
+    font-size: large;
+}
+
+.articulo_doby {
+    background-color: #181818;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px ;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .articulo_doby {
+        grid-template-columns: repeat(1, 1fr);
+        background-color: #181818;
+        display: grid;
+        grid-gap: 20px ;
+        padding: 20px;
+    }
+    
+}

@@ -1,0 +1,20 @@
+.dialogBody {
+    height: 500px;
+}
+.dialogConentHeader {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.dialogFooter {
+    display: grid;
+    
+}
+
+.text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
