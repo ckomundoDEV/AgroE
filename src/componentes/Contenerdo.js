@@ -2,10 +2,11 @@ import React from 'react'
 import MenuIcon from '@material-ui/icons/Menu';
 import Inicio from "./Inicio"
 import Articulos from "./Articulos"
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import {  Route, Link } from "react-router-dom"
 import Address from'./Address';
+import Admin from './Admin.js'
 import "./Contenedor.css"
 
 
@@ -42,16 +43,18 @@ function Contenerdo() {
                         </div>
                         
                         <div className="shoping">
-                            <ShoppingCartIcon/>
+                            <Link to="/Admin">
+                                <AccountCircleIcon color="disabled" fontSize="large"/>
+                            </Link>                            
                         </div>
 
                     </nav>
 
                 <body className="body">
-                   
                         <Route exact path="/" component={Inicio}/>
                         <Route exact path="/Articulos" component={Articulos}/>
                         <Route exact path="/Address" component={Address}/>
+                        <Route exact path="/Admin" component={Admin}/>
                     
                 </body>
                 <footer className="footer">

@@ -43,6 +43,9 @@
 }
 
 .navbar .shoping {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-column: 8 / 8;
 }
 

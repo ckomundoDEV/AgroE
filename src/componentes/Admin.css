@@ -1,0 +1,47 @@
+.admin_container{
+    display: grid;
+    grid-template-rows: repeat(3 , 1fr);
+    height: 100%;
+    min-height: 100vh;
+    background-color: #F2F2F2;
+}
+
+.admin_header {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    height: 20vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.user {
+    background-color: white;
+    border-radius: 10px ;
+    border: 3px solid #C7C7C7;
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    width: 80vw;
+    align-items: center;
+}
+
+.icon  {
+    margin: 30px;
+}
+
+.admin_body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+
+.item {
+    display: flex;
+    background-color: white;
+    border-radius: 10px ;
+    border: 3px solid #C7C7C7;
+    height: 150px;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+}

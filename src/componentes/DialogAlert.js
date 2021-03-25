@@ -15,7 +15,7 @@ const useStyles = makeStyles({
         },
 });
 
-function DialogAlert({open, handleClose}) {
+function DialogAlert({open, handleClose, imgs}) {
     const classes = useStyles();
     return ( 
         <div className="dialog_container">
@@ -24,13 +24,16 @@ function DialogAlert({open, handleClose}) {
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
+                maxWidth="md"
                 
             >
-                <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+                <DialogTitle id="alert-dialog-title">{"Bule de plastico"}</DialogTitle>
                 <div className="dialogBody">
                     <div className="dialogHeader">
                         <DialogContent className="dialogConentHeader">
-                            <Carousel/>
+                            <Carousel 
+                                imgs={imgs}
+                            />
                             <DialogContentText className="text" id="alert-dialog-description">
                                 cantidad:  30
                                 <br/>
@@ -45,13 +48,12 @@ function DialogAlert({open, handleClose}) {
                                 <br/>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis fuga minima assumenda alias blanditiis repellendus amet commodi doloremque minus neque, deserunt facilis ipsum, quos, dolore ad eligendi explicabo repudiandae hic?
                             </DialogContentText>
-                        <DialogActions>
-                            <Button onClick={handleClose} color="primary" autoFocus>
-                                Agree
-                            </Button>
-                            <Button onClick={handleClose} color="primary" autoFocus>
-                                Agree
-                            </Button>
+                        <DialogActions className="buttons">
+                            <div className="buttons">
+                                <Button onClick={handleClose} color="primary" autoFocus>
+                                        Agree
+                                </Button>                               
+                            </div>
                         </DialogActions>
                         </DialogContent>  
 
