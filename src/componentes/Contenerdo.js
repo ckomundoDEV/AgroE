@@ -9,6 +9,11 @@ import Address from'./Address';
 import Admin from './Admin.js'
 import "./Contenedor.css"
 
+const db = [
+    {
+
+    }
+]
 
 function Contenerdo() {
 
@@ -35,7 +40,6 @@ function Contenerdo() {
                                 <li>                              
                                     <Link to="/Address">Conosenos</Link>                                
                                 </li>
-                                <li><a href="#">Promos</a></li>
                             </ul>
                         
                         <div className="menu-bar" onClick={handleToggle} id="menu-bar">

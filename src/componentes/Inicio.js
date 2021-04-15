@@ -28,54 +28,6 @@ function Inicio() {
                     descripcion="Buele de metal, plastico y carton"
                     imgUrl="https://logismarketmx.cdnwm.com/ip/grupo-univerplast-mexico-tambor-de-200-litros-abierto-tipo-ipe-tambor-208-litros-cerrado-elanillado-1624696-361x230.jpg"
                 />
-                <Poust
-                    nombre = "Tambo de plastico"
-                    precio= "250"
-                    descripcion="Buele de metal, plastico y carton"
-                    imgUrl="https://logismarketmx.cdnwm.com/ip/grupo-univerplast-mexico-tambor-de-200-litros-abierto-tipo-ipe-tambor-208-litros-cerrado-elanillado-1624696-361x230.jpg"
-                />
-                <Poust
-                    nombre = "Tambo de plastico"
-                    precio= "250"
-                    descripcion="Buele de metal, plastico y carton"
-                    imgUrl="https://logismarketmx.cdnwm.com/ip/grupo-univerplast-mexico-tambor-de-200-litros-abierto-tipo-ipe-tambor-208-litros-cerrado-elanillado-1624696-361x230.jpg"
-                />
-                <Poust
-                    nombre = "Tambo de plastico"
-                    precio= "250"
-                    descripcion="Buele de metal, plastico y carton"
-                    imgUrl="https://logismarketmx.cdnwm.com/ip/grupo-univerplast-mexico-tambor-de-200-litros-abierto-tipo-ipe-tambor-208-litros-cerrado-elanillado-1624696-361x230.jpg"
-                />
-                <Poust
-                    nombre = "Tambo de plastico"
-                    precio= "250"
-                    descripcion="Buele de metal, plastico y carton"
-                    imgUrl="https://logismarketmx.cdnwm.com/ip/grupo-univerplast-mexico-tambor-de-200-litros-abierto-tipo-ipe-tambor-208-litros-cerrado-elanillado-1624696-361x230.jpg"
-                />
-                <Poust
-                    nombre = "Tambo de plastico"
-                    precio= "250"
-                    descripcion="Buele de metal, plastico y carton"
-                    imgUrl="https://logismarketmx.cdnwm.com/ip/grupo-univerplast-mexico-tambor-de-200-litros-abierto-tipo-ipe-tambor-208-litros-cerrado-elanillado-1624696-361x230.jpg"
-                />
-                <Poust
-                    nombre = "Tambo de plastico"
-                    precio= "250"
-                    descripcion="Buele de metal, plastico y carton"
-                    imgUrl="https://logismarketmx.cdnwm.com/ip/grupo-univerplast-mexico-tambor-de-200-litros-abierto-tipo-ipe-tambor-208-litros-cerrado-elanillado-1624696-361x230.jpg"
-                />
-                <Poust
-                    nombre = "Tambo de plastico"
-                    precio= "250"
-                    descripcion="Buele de metal, plastico y carton"
-                    imgUrl="https://logismarketmx.cdnwm.com/ip/grupo-univerplast-mexico-tambor-de-200-litros-abierto-tipo-ipe-tambor-208-litros-cerrado-elanillado-1624696-361x230.jpg"
-                />
-                <Poust
-                    nombre = "Tambo de plastico"
-                    precio= "250"
-                    descripcion="Buele de metal, plastico y carton"
-                    imgUrl="https://logismarketmx.cdnwm.com/ip/grupo-univerplast-mexico-tambor-de-200-litros-abierto-tipo-ipe-tambor-208-litros-cerrado-elanillado-1624696-361x230.jpg"
-                />                                                                
             </div>     
         </div>
     )

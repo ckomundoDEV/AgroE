@@ -1,9 +1,8 @@
-import React from 'react'
-import DialogAlert from "../DialogAlert.js"
-import "./Articulo.css"
+import React from "react";
+import DialogAlert from "../DialogAlert.js";
+import "./Articulo.css";
 
-function Articulo({art,}) {
-
+function Articulo({ art }) {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -14,29 +13,23 @@ function Articulo({art,}) {
         setOpen(false);
     };
     return (
-        
         <div>
-                <DialogAlert 
-                    
-                    handleClose = {handleClose}
-                    imgs = {art.carousel}
-                    open = {open}   
-                />
-            <div className="poust_container" onClick={handleClickOpen}>
-                <div className="items">
-                    <h1>{art.nombre}</h1>
-                </div>
-                <div className="items">
-                    <img src={art.url} alt=""/>
-                </div>
-                <div className="items">
-                    <h2>{art.descripcion}</h2>
-                    <br/>
-                    <h2>$ {art.precio}</h2>
-                </div>
+        <DialogAlert handleClose={handleClose} imgs={art.carousel} open={open} />
+        <div className="poust_container" onClick={handleClickOpen}>
+            <div className="items">
+            <h1>{art.nombre}</h1>
+            </div>
+            <div className="items">
+            <img src={art.url} alt="" />
+            </div>
+            <div className="items">
+            <h2>{art.descripcion}</h2>
+            <br />
+            <h2>$ {art.precio}</h2>
             </div>
         </div>
-    )
-}
+        </div>
+    );
+    }
 
-export default Articulo
+export default Articulo;
