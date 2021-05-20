@@ -7,6 +7,9 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Button from '@material-ui/core/Button';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -32,12 +35,20 @@ const StyledTableRow = withStyles((theme) => ({
     table: {
         minWidth: 700,
     },
+    buttons: {
+        display: "flex",
+        justifyContent: "space-evenly"
+    }
     });
 
-function ArticulosQrud({initialData}) {
+function ArticulosQrud({initialData, handleClickOpen, setDataToEdit, handleDelete}) {
     const classes = useStyles();
     const rows = initialData;
-    
+
+    const editDialog = (row) => {
+        handleClickOpen()
+        setDataToEdit(row.id)
+    }
     return (
         <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="customized table">
@@ -51,13 +62,16 @@ function ArticulosQrud({initialData}) {
                 </TableRow>
             </TableHead>
             <TableBody>
-                {rows.map((row) => (
-                <StyledTableRow key={row.nombre}>
+                {rows.map((row, index) => (
+                <StyledTableRow key={row.id}>
                     <StyledTableCell component="th" scope="row">{row.nombre}</StyledTableCell>
-                    <StyledTableCell align="right">{row.precio}</StyledTableCell>
+                    <StyledTableCell align="right">${row.precio}</StyledTableCell>
                     <StyledTableCell align="right">{row.calidad}</StyledTableCell>
                     <StyledTableCell align="right">{row.departamento}</StyledTableCell>
-                    <StyledTableCell align="right">{row.carousel.length}</StyledTableCell>
+                    <StyledTableCell align="right" className={classes.buttons}>
+                        <Button variant="contained" onClick={()=>editDialog(row) }><EditIcon/></Button>
+                        <Button variant="contained" onClick={() => handleDelete(row)} color="secondary"><DeleteIcon/></Button>
+                    </StyledTableCell>
                 </StyledTableRow>
                 ))}
             </TableBody>

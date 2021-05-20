@@ -7,16 +7,11 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import Carousel from "./Carousel";
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
-    dialog: {
-        backgroundColor: "#181818"
-        },
-});
+
 
 function DialogAlert({open, handleClose, imgs}) {
-    const classes = useStyles();
+    
     return ( 
         <div className="dialog_container">
             <Dialog
@@ -31,9 +26,7 @@ function DialogAlert({open, handleClose, imgs}) {
                 <div className="dialogBody">
                     <div className="dialogHeader">
                         <DialogContent className="dialogConentHeader">
-                            <Carousel 
-                                imgs={imgs}
-                            />
+                            <div></div>
                             <DialogContentText className="text" id="alert-dialog-description">
                                 cantidad:  30
                                 <br/>

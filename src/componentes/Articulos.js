@@ -1,6 +1,6 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { useTheme } from "@material-ui/core/styles";
-
+import {fb} from "../firebase";
 import TextField from "@material-ui/core/TextField";
 import Input from "@material-ui/core/Input";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -8,8 +8,8 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import "./Articulos.css";
 import Articulo from "./componentes/Articulo";
+const db = fb.firestore()
 
-import Poust from "./Poust.js";
     const data = [
     {
         nombre: "tambo de plastico",
@@ -110,14 +110,34 @@ import Poust from "./Poust.js";
 
     function Articulos() {
     const [personName, setPersonName] = useState([]);
+    const [articulos, setArticulos] = useState([])
+    const [rows, setRows] = useState(...articulos)
+    const [currentId, setCurrentId] = useState('')
+    const [departamento, setDepartamento] = useState('todo')
     const theme = useTheme();
+    
+    useEffect(()=> {
+        handleGetData()
+        console.log(articulos); 
+    },[])
+
+
+    const handleGetData = async () => {
+        db.collection('articulos').onSnapshot((querySnapshot)=> {
+            const docs = [];
+            querySnapshot.forEach(doc => {
+                docs.push({...doc.data(), id:doc.id});
+            });            
+            setArticulos(docs);
+            
+        });
+    }
+
 
     const names = [
-        "Envases",
-        "Insecticidas",
-        "Fertilizantes",
-        "Agro Quimicos",
-        "Fereteria",
+        "todo",
+        "envases",
+        "ferreteria",
     ];
     const handleChange = (e) => {
         setPersonName(e.target.value);
@@ -142,7 +162,7 @@ import Poust from "./Poust.js";
             : theme.typography.fontWeightMedium,
         };
     }
-
+    
     return (
         <div className="articulos">
         <div className="articulo_header">
@@ -172,6 +192,7 @@ import Poust from "./Poust.js";
                     key={id}
                     value={name}
                     style={getStyles(name, personName, theme)}
+                    onClick={()=>setDepartamento(name)}
                 >
                     {name}
                 </MenuItem>
@@ -187,10 +208,18 @@ import Poust from "./Poust.js";
         </div>
 
         <div className="articulo_doby">
-            {data.map((art, id) => (
+            {articulos.filter((p) => {
+                if (p.departamento === departamento) {
+                    return p
+                }else if (departamento === 'todo') {
+                    return p
+                }
+            }).map((art, id) => (
+                
             <Articulo art={art} key={id} />
             ))}
         </div>
+
         </div>
     );
     }

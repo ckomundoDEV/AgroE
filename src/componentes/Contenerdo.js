@@ -9,11 +9,7 @@ import Address from'./Address';
 import Admin from './Admin.js'
 import "./Contenedor.css"
 
-const db = [
-    {
 
-    }
-]
 
 function Contenerdo() {
 
@@ -54,13 +50,13 @@ function Contenerdo() {
 
                     </nav>
 
-                <body className="body">
+                <div className="body">
                         <Route exact path="/" component={Inicio}/>
                         <Route exact path="/Articulos" component={Articulos}/>
                         <Route exact path="/Address" component={Address}/>
                         <Route exact path="/Admin" component={Admin}/>
                     
-                </body>
+                </div>
                 <footer className="footer">
                     <div className="redes">   
                         <p>Conócenos:</p>
