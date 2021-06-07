@@ -14,10 +14,11 @@ function Articulo({ art }) {
     const handleClose = () => {
         setOpen(false);
     };
+
     return (
         <div>
-        <DialogAlert handleClose={handleClose} imgs={art.carousel} open={open} />
-        <div className="poust_container" onClick={handleClickOpen}>
+        <DialogAlert handleClose={handleClose} art={art} open={open} />
+        <div className="articulo_contianer" onClick={handleClickOpen}>
             <div className="items">
             <h1>{art.nombre}</h1>
             </div>
@@ -25,8 +26,7 @@ function Articulo({ art }) {
             <img src={art.url} alt="" />
             </div>
             <div className="items">
-            <h2>{art.descripicon}</h2>
-            <br />
+
             <h2>$ {art.precio}</h2>
             </div>
         </div>

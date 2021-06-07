@@ -1,8 +1,31 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Poust from './Poust.js';
 import "./Inicio.css"
+import {fb} from "../firebase.js";
+const db = fb.firestore()
+
+
 
 function Inicio() {
+    const [poust, setPoust] = useState([])
+    useEffect(() =>{
+        handleGetData()
+        console.log(poust);
+    },[])
+
+    const handleGetData = async () => {
+        db.collection('poust').onSnapshot((querySnapshot)=> {
+            const docs = [];
+            querySnapshot.forEach(doc => {
+                docs.push({...doc.data(), id:doc.id});
+            });            
+            console.log(docs);
+            setPoust(docs);
+            
+        });
+    }
+    
+
     return (    
         <div className="body">
                 <header className="header">
@@ -16,18 +39,13 @@ function Inicio() {
 
                 </header>
             <div className="poust-container">
-                <Poust
-                    nombre = "Tambo de plastico"
-                    precio= "250"
-                    descripcion="Buele de metal, plastico y carton"
-                    imgUrl="https://logismarketmx.cdnwm.com/ip/grupo-univerplast-mexico-tambor-de-200-litros-abierto-tipo-ipe-tambor-208-litros-cerrado-elanillado-1624696-361x230.jpg"
-                />
-                <Poust
-                    nombre = "Tambo de plastico"
-                    precio= "250"
-                    descripcion="Buele de metal, plastico y carton"
-                    imgUrl="https://logismarketmx.cdnwm.com/ip/grupo-univerplast-mexico-tambor-de-200-litros-abierto-tipo-ipe-tambor-208-litros-cerrado-elanillado-1624696-361x230.jpg"
-                />
+            {poust.map((post) => (               
+            <Poust 
+                poust={post}
+
+            />
+            ))}
+
             </div>     
         </div>
     )

@@ -92,7 +92,6 @@ function ArticuloDialog({ open, handleClose,  handleCreate,  setDataToEdit, data
 
     const getArticleById = async (id) => {
         const doc = await db.collection('articulos').doc(id).get();
-        console.log(doc.data());
         let docData =  {...doc.data()}
         setArticulo(docData)
         setDeleteImg(docData.url)

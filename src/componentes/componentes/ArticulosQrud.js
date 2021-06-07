@@ -9,7 +9,10 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Button from '@material-ui/core/Button';
 import EditIcon from '@material-ui/icons/Edit';
+import PostAddIcon from '@material-ui/icons/PostAdd';
 import DeleteIcon from '@material-ui/icons/Delete';
+import {fb} from "../../firebase.js";
+const db = fb.firestore()
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -41,14 +44,19 @@ const StyledTableRow = withStyles((theme) => ({
     }
     });
 
-function ArticulosQrud({initialData, handleClickOpen, setDataToEdit, handleDelete}) {
+function ArticulosQrud({initialData, handleClickOpen, setDataToEdit, handleDelete, poustAlert}) {
     const classes = useStyles();
     const rows = initialData;
 
+    const handlePoust = (art) => {
+        console.log(art.id);
+        poustAlert(art)
+    }
     const editDialog = (row) => {
         handleClickOpen()
         setDataToEdit(row.id)
     }
+
     return (
         <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="customized table">
@@ -58,7 +66,7 @@ function ArticulosQrud({initialData, handleClickOpen, setDataToEdit, handleDelet
                 <StyledTableCell align="right">Precio</StyledTableCell>
                 <StyledTableCell align="right">Calidad</StyledTableCell>
                 <StyledTableCell align="right">Departamento</StyledTableCell>
-                <StyledTableCell align="right">num Imagenes</StyledTableCell>
+                <StyledTableCell align="right"></StyledTableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
@@ -71,6 +79,7 @@ function ArticulosQrud({initialData, handleClickOpen, setDataToEdit, handleDelet
                     <StyledTableCell align="right" className={classes.buttons}>
                         <Button variant="contained" onClick={()=>editDialog(row) }><EditIcon/></Button>
                         <Button variant="contained" onClick={() => handleDelete(row)} color="secondary"><DeleteIcon/></Button>
+                        <Button variant="contained" onClick={()=>handlePoust(row)} color="primary"><PostAddIcon/></Button>
                     </StyledTableCell>
                 </StyledTableRow>
                 ))}

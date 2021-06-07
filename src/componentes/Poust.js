@@ -1,11 +1,11 @@
 
-import React from 'react'
+import React, {useEffect} from 'react'
 import './Poust.css';
 import DialogAlert from "./DialogAlert.js"
 
 
 
-function Poust({imgUrl, nombre, descripcion, precio}) {
+function Poust({poust}) {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -15,24 +15,26 @@ function Poust({imgUrl, nombre, descripcion, precio}) {
     const handleClose = () => {
         setOpen(false);
     };
+
+
     return (
         
         <div>
                 <DialogAlert 
                     handleClose = {handleClose}
                     open = {open}   
+                    url={poust.url}
                 />
             <div className="poust_container" onClick={handleClickOpen}>
                 <div className="items">
-                    <h1>{nombre}</h1>
+                    <h1>{poust.name}</h1>
                 </div>
                 <div className="items">
-                    <img src={imgUrl} alt=""/>
+                    <img src={poust.img} alt=""/>
                 </div>
                 <div className="items">
-                    <h2>{descripcion}</h2>
-                    <br/>
-                    <h2>$ {precio}</h2>
+                    <h2>{poust.descripcion}</h2>
+
                 </div>
             </div>
         </div>
